@@ -27,12 +27,17 @@ import (
 
 type BatchV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	HyperJobsGetter
 	JobsGetter
 }
 
 // BatchV1alpha1Client is used to interact with features provided by the batch.volcano.sh group.
 type BatchV1alpha1Client struct {
 	restClient rest.Interface
+}
+
+func (c *BatchV1alpha1Client) HyperJobs(namespace string) HyperJobInterface {
+	return newHyperJobs(c, namespace)
 }
 
 func (c *BatchV1alpha1Client) Jobs(namespace string) JobInterface {

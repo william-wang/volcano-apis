@@ -47,6 +47,9 @@ import (
 // JobKind creates job GroupVersionKind.
 var JobKind = vcbatch.SchemeGroupVersion.WithKind("Job")
 
+// HyperJobKind creates hyperJob GroupVersionKind.
+var HyperJobKind = vcbatch.SchemeGroupVersion.WithKind("HyperJob")
+
 // CommandKind creates command GroupVersionKind.
 var CommandKind = vcbus.SchemeGroupVersion.WithKind("Command")
 

@@ -56,6 +56,8 @@ func (f *genericInformer) Lister() cache.GenericLister {
 func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource) (GenericInformer, error) {
 	switch resource {
 	// Group=batch.volcano.sh, Version=v1alpha1
+	case v1alpha1.SchemeGroupVersion.WithResource("hyperjobs"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Batch().V1alpha1().HyperJobs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("jobs"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Batch().V1alpha1().Jobs().Informer()}, nil
 

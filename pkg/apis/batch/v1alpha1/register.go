@@ -45,6 +45,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
 		&Job{},
 		&JobList{},
+		&HyperJob{},
+		&HyperJobList{},
 	)
 
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)

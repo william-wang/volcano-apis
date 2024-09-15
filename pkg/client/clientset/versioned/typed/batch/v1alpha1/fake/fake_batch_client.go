@@ -27,6 +27,10 @@ type FakeBatchV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeBatchV1alpha1) HyperJobs(namespace string) v1alpha1.HyperJobInterface {
+	return &FakeHyperJobs{c, namespace}
+}
+
 func (c *FakeBatchV1alpha1) Jobs(namespace string) v1alpha1.JobInterface {
 	return &FakeJobs{c, namespace}
 }

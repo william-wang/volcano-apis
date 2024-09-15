@@ -38,6 +38,14 @@ func ForKind(kind schema.GroupVersionKind) interface{} {
 	// Group=batch.volcano.sh, Version=v1alpha1
 	case v1alpha1.SchemeGroupVersion.WithKind("DependsOn"):
 		return &batchv1alpha1.DependsOnApplyConfiguration{}
+	case v1alpha1.SchemeGroupVersion.WithKind("FailurePolicy"):
+		return &batchv1alpha1.FailurePolicyApplyConfiguration{}
+	case v1alpha1.SchemeGroupVersion.WithKind("HyperJob"):
+		return &batchv1alpha1.HyperJobApplyConfiguration{}
+	case v1alpha1.SchemeGroupVersion.WithKind("HyperJobSpec"):
+		return &batchv1alpha1.HyperJobSpecApplyConfiguration{}
+	case v1alpha1.SchemeGroupVersion.WithKind("HyperJobStatus"):
+		return &batchv1alpha1.HyperJobStatusApplyConfiguration{}
 	case v1alpha1.SchemeGroupVersion.WithKind("Job"):
 		return &batchv1alpha1.JobApplyConfiguration{}
 	case v1alpha1.SchemeGroupVersion.WithKind("JobCondition"):
@@ -50,6 +58,14 @@ func ForKind(kind schema.GroupVersionKind) interface{} {
 		return &batchv1alpha1.JobStatusApplyConfiguration{}
 	case v1alpha1.SchemeGroupVersion.WithKind("LifecyclePolicy"):
 		return &batchv1alpha1.LifecyclePolicyApplyConfiguration{}
+	case v1alpha1.SchemeGroupVersion.WithKind("ReplicatedJob"):
+		return &batchv1alpha1.ReplicatedJobApplyConfiguration{}
+	case v1alpha1.SchemeGroupVersion.WithKind("ReplicatedJobStatus"):
+		return &batchv1alpha1.ReplicatedJobStatusApplyConfiguration{}
+	case v1alpha1.SchemeGroupVersion.WithKind("StartupPolicy"):
+		return &batchv1alpha1.StartupPolicyApplyConfiguration{}
+	case v1alpha1.SchemeGroupVersion.WithKind("SuccessPolicy"):
+		return &batchv1alpha1.SuccessPolicyApplyConfiguration{}
 	case v1alpha1.SchemeGroupVersion.WithKind("TaskSpec"):
 		return &batchv1alpha1.TaskSpecApplyConfiguration{}
 	case v1alpha1.SchemeGroupVersion.WithKind("TaskState"):
